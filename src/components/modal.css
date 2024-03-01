@@ -1,0 +1,134 @@
+/* Modal.css */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+
+
+.modal-main {
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: max-content;
+    margin: auto;
+    bottom: 0;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem 2.5rem;
+}
+
+
+.modal-header {
+    color: #eea714;
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh */
+}
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none;
+}
+
+.internet-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-justify: newspaper;
+}
+
+.internet-items p:first-child::after {
+    content: '·······················································';
+    margin: 0 8px;
+}
+
+.modal-close-button {
+    height: 30px;
+    width: 30px;
+    border: none;
+    display: flex;
+    margin: .37rem;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: inherit;
+    font-size: x-large;
+    color: #676767;
+}
+
+.charge-detail.modal-input {
+    margin: 0rem;
+}
+
+.charge-detail.modal-input.email {
+    margin: -.7rem;
+}
+
+.purchase-button.modal-buy {
+    border-radius: 7px;
+    width: 100%;
+}
+
+.modal-main.success {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    height: max-content;
+    width: 20rem;
+
+
+}
+
+.success-logo {
+    width: 8rem;
+}
+
+.return-button {
+    background-color: #eea714;
+    border: none;
+    padding: .67rem;
+    border-radius: 1rem;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.return-button:hover {
+    background-color: #d59514;
+}
+
+@media only screen and (max-width: 500px) {
+    .modal-main.success {
+        width: auto;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .success-logo {
+        width: 5rem;
+    }
+
+    .return-button {
+        width: 100%;
+    }
+
+}

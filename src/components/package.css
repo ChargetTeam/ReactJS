@@ -1,0 +1,140 @@
+.package-container {
+    width: 90%;
+    background-color: #ececec;
+    margin: 1rem;
+    box-shadow: #33333374 1px 2px;
+    border-radius: 1rem;
+    direction: rtl;
+    padding-top: .67rem;
+    display: inline-grid;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: .37rem;
+    padding: 0.67rem;
+}
+
+.header-container img {
+    margin-right: 10px;
+    width: 4rem;
+}
+
+.header-container h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.sim-type {
+    color: #6e6e6e;
+    margin: 0;
+}
+
+.package-detail {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: .37rem;
+    padding: 0.67rem;
+}
+
+.package-price {
+    text-align: start;
+    margin: .67rem;
+    font-weight: bolder;
+}
+
+.purchase-button {
+    background-color: #eea714;
+    padding: 15;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: 'center';
+    width: 100%;
+    flex-direction: 'row';
+    justify-content: 'space-between';
+    margin-top: 0;
+    border: 0;
+    color: '#fff';
+    font-size: 20;
+    font-weight: 'bold';
+    padding: .87rem;
+    color: #ececec;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.purchase-button:hover {
+    background-color: #d59514;
+}
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: 10px;
+    padding: 5rem;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .package-container {
+        width: 70%;
+
+    }
+
+    .grid-container {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .package-container {
+        width: 100%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.37rem;
+        grid-auto-rows: minmax(100px, auto);
+        column-gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .package-container {
+        width: 90%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        grid-auto-rows: minmax(100px, auto);
+        grid-auto-columns: 10px;
+        padding: 2rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .package-container {
+        width: 70%;
+
+    }
+
+    .grid-container {
+        display: block;
+        padding: 2rem;
+    }
+}
