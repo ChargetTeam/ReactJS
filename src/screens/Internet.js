@@ -1,8 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import Package from '../components/Package';
-import '../components/package.css'
+import '../components/package.css';
+import axios, { isCancel, AxiosError } from 'axios';
 
 const Internet = () => {
+
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get('http://localhost:8000/api/internet/');
+    //             console.log(response.data);
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error);
+    //         } finally {
+    //             console.log("final");;
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, []);
+
 
     const options = [
         {

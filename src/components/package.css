@@ -83,6 +83,7 @@
     grid-auto-rows: minmax(100px, auto);
     grid-auto-columns: 10px;
     padding: 5rem;
+    margin-top: 2rem;
 
 }
 
@@ -124,17 +125,17 @@
         grid-auto-rows: minmax(100px, auto);
         grid-auto-columns: 10px;
         padding: 2rem;
+        margin-top: 5rem;
     }
 }
 
 @media only screen and (max-width: 700px) {
     .package-container {
-        width: 70%;
-
+        width: 90%;
     }
 
     .grid-container {
         display: block;
-        padding: 2rem;
+        align-items: center;
     }
 }

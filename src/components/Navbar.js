@@ -7,10 +7,6 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
     const navigate = useNavigate();
     const [currentItem, setCurrentItem] = useState('خرید اینترنت');
-    // useEffect(() => {
-    //     setCurrentItem('خرید اینترنت')
-    // })
-
 
 
     const handleClick = (item) => {
@@ -24,23 +20,34 @@ const Navbar = () => {
         setCurrentItem(item);
     }
 
+
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+
     return (
-        <div className='navbar-container'>
-            <img
-                src={require('../img/logo-fa.png')}
-                alt="Logo"
-                className='navbar-logo'
-            />
-            <div className='navbar-items-container'>
-
-                <li onClick={() => handleClick('خرید اینترنت')} className={currentItem === 'خرید اینترنت' ? 'setItem navbar-item' : 'navbar-item'}>خرید اینترنت</li>
-
-                <li onClick={() => handleClick('خرید شارژ')} className={currentItem === 'خرید شارژ' ? 'setItem navbar-item' : 'navbar-item'}>خرید شارژ</li>
-
-                <li onClick={() => handleClick('تماس با ما')} className={currentItem === 'تماس با ما' ? 'setItem navbar-item' : 'navbar-item'}>تماس با ما</li>
+        <>
+            <div className="topnav" id="myTopnav">
+                <img
+                    src={require('../img/logo-fa.png')}
+                    alt="Logo"
+                    className='navbar-logo'
+                />
+                <a onClick={() => handleClick('خرید اینترنت')} className={currentItem == 'خرید اینترنت' ? 'active' : ''}>خرید اینترنت</a>
+                <a onClick={() => handleClick('خرید شارژ')} className={currentItem == 'خرید شارژ' ? 'active' : ''}>خرید شارژ</a>
+                {/* <a onClick={() => handleClick('تماس با ما')} className={currentItem == 'تماس با ما' ? 'active' : ''}>تماس با ما</a> */}
+                <a href="javascript:void(0);" className="icon" onClick={myFunction}>
+                    <i className="fa fa-bars"></i>
+                </a>
             </div>
 
-        </div>
+        </>
+
     );
 };
 
