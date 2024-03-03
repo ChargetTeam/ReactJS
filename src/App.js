@@ -19,6 +19,7 @@ function App() {
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/success" element={<Success />} />
       </Routes>
+      <Contact />
     </BrowserRouter>
   );
 }

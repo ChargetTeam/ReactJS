@@ -1,19 +1,24 @@
 .contact-container {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    background-color: #ccc;
+    padding: 1rem 0;
+    border-top: 1px solid #bbb;
 }
 
 .address {
     display: block;
+    margin: 2rem;
 }
 
 .phone {
     display: block;
+    margin: 2rem;
 }

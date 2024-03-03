@@ -17,8 +17,11 @@ const Contact = () => {
     return (
         <div className='charge-screen'>
             <div className='contact-container'>
-                <div className='address'>آدرس</div>
-                <div className='phone'>تلفن</div>
+                <div className='address'>
+                    آدرس:
+                    خیابان آزادی</div>
+                <div className='phone'>
+                    ۰۹۱۲۱۵۰۴۴۴۴ :تلفن</div>
             </div>
         </div>
 
