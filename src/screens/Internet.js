@@ -154,7 +154,7 @@ const Internet = () => {
         const updateBanner = () => {
             if (window.innerWidth < 700) {
                 setBackgroundImage('banner2.png');
-                setHeightImage('300px');
+                setHeightImage('380px');
             } else {
                 setBackgroundImage('banner.png');
                 setHeightImage('550px');
@@ -182,7 +182,7 @@ const Internet = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 width: "100%",
-                marginTop: "60px",
+                marginTop: "55px",
                 height: heightImage,
                 marginBottom: "-70px",
             }}
