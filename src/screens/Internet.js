@@ -156,8 +156,9 @@ const Internet = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             width: "100%",
-            marginTop: "100px",
-            height: "500px"
+            marginTop: "80px",
+            height: "500px",
+            marginBottom: "-40px"
         }}
     ></div>
     
