@@ -147,14 +147,17 @@ const Internet = () => {
 
 
     const [backgroundImage, setBackgroundImage] = useState('banner.png');
+    const [heightImage, setHeightImage] = useState('550px');
 
     useEffect(() => {
         // Function to update the banner image based on screen width
         const updateBanner = () => {
             if (window.innerWidth < 700) {
                 setBackgroundImage('banner2.png');
+                setHeightImage('300px');
             } else {
                 setBackgroundImage('banner.png');
+                setHeightImage('550px');
             }
         };
 
