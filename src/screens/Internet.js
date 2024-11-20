@@ -146,20 +146,43 @@ const Internet = () => {
     ]
 
 
+    const [backgroundImage, setBackgroundImage] = useState('banner.png');
+
+    useEffect(() => {
+        // Function to update the banner image based on screen width
+        const updateBanner = () => {
+            if (window.innerWidth < 700) {
+                setBackgroundImage('banner2.png');
+            } else {
+                setBackgroundImage('banner.png');
+            }
+        };
+
+        // Set the initial banner image
+        updateBanner();
+
+        // Add event listener to handle window resize
+        window.addEventListener('resize', updateBanner);
+
+        // Cleanup the event listener on component unmount
+        return () => window.removeEventListener('resize', updateBanner);
+    }, []);
+
+
     return (
        <div className="internet-page">
     {/* Full-width banner */}
     <div 
-        className="banner" 
-        style={{
-            backgroundImage: "url('banner.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            width: "100%",
-            marginTop: "70px",
-            height: "550px",
-            marginBottom: "-70px"
-        }}
+        className="banner"
+            style={{
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                width: "100%",
+                marginTop: "70px",
+                height: "550px",
+                marginBottom: "-70px",
+            }}
     ></div>
     
     {/* Grid container */}
