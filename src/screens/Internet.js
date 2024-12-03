@@ -149,11 +149,52 @@ const Internet = () => {
     ]
 
 
+    const [backgroundImage, setBackgroundImage] = useState('banner.png');
+    const [heightImage, setHeightImage] = useState('550px');
+
+    useEffect(() => {
+        // Function to update the banner image based on screen width
+        const updateBanner = () => {
+            if (window.innerWidth < 700) {
+                setBackgroundImage('banner2.png');
+                setHeightImage('400px');
+            } else {
+                setBackgroundImage('banner.png');
+                setHeightImage('550px');
+            }
+        };
+
+        // Set the initial banner image
+        updateBanner();
+
+        // Add event listener to handle window resize
+        window.addEventListener('resize', updateBanner);
+
+        // Cleanup the event listener on component unmount
+        return () => window.removeEventListener('resize', updateBanner);
+    }, []);
+
+
     return (
-        <div className='internet-page'>
-            <div className='grid-container'>
+        <div className="internet-page">
+            {/* Full-width banner */}
+            <div
+                className="banner"
+                style={{
+                    backgroundImage: `url(${backgroundImage})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    width: "100%",
+                    marginTop: "60px",
+                    height: heightImage,
+                    marginBottom: "-70px",
+                }}
+            ></div>
+
+            {/* Grid container */}
+            <div className="grid-container">
                 {options.map((option, index) => (
-                    <div className='grid-item' key={index}>
+                    <div className="grid-item" key={index}>
                         <Package
                             id={option.id}
                             simcard={option.simcard_class}
@@ -166,7 +207,6 @@ const Internet = () => {
                     </div>
                 ))}
             </div>
-
         </div>
     );
 }
