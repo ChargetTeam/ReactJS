@@ -5,11 +5,13 @@ import Modal from './Modal';
 import { useNavigate } from 'react-router-dom';
 
 
-const Package = ({ id, cimcard, title, type, capacity, duration, price }) => {
+const Package = ({ id, simcard, title, type, capacity, duration, price }) => {
     const navigate = useNavigate();
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [showModal, setShowModal] = useState(false);
+    const [productID, setProductID] = useState();
+
     const handlePhoneChange = (event) => {
         const newPhoneNumber = event.target.value;
         setPhone(newPhoneNumber);
@@ -28,6 +30,12 @@ const Package = ({ id, cimcard, title, type, capacity, duration, price }) => {
         setShowModal(false);
     };
 
+    const handlePurchase = () => {
+        navigate('/success');
+        setProductID(id);
+    }
+
+
 
     return (
         <div className='package-container'>
@@ -36,7 +44,7 @@ const Package = ({ id, cimcard, title, type, capacity, duration, price }) => {
                     <h3>{title}</h3>
                     <span className='sim-type'>{type}</span>
                 </div>
-                {cimcard === 'همراه اول' ? <img src={logo} /> : <></>}
+                {simcard === 'HamraheAval' ? <img src={logo} /> : <></>}
             </div>
 
             <div className='package-detail'>
@@ -44,7 +52,7 @@ const Package = ({ id, cimcard, title, type, capacity, duration, price }) => {
                 <div>{duration}</div>
             </div>
 
-            <div className='package-price'>{price}</div>
+            <div className='package-price'>{price} تومان</div>
             <button className='purchase-button' onClick={handleOpenModal}>انتخاب بسته</button>
 
             <Modal show={showModal} handleClose={handleCloseModal}>
@@ -67,7 +75,7 @@ const Package = ({ id, cimcard, title, type, capacity, duration, price }) => {
                     </div>
                     <div className='internet-items'>
                         <p className='right-p'>قیمت بسته</p>
-                        <p className='left-p'>{price}</p>
+                        <p className='left-p'>{price} تومان</p>
                     </div>
 
                     <div className='container-input '>
@@ -86,7 +94,7 @@ const Package = ({ id, cimcard, title, type, capacity, duration, price }) => {
                             onChange={(e) => handleEmailChange(e)}
                             value={email} />
                     </div>
-                    <button className='purchase-button modal-buy' onClick={() => navigate('/success')}>خرید</button>
+                    <button className='purchase-button modal-buy' onClick={() => handlePurchase()}>خرید</button>
 
                 </div>
             </Modal>

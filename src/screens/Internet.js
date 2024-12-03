@@ -5,15 +5,18 @@ import axios, { isCancel, AxiosError } from 'axios';
 
 const Internet = () => {
 
+    // const [options, setOptions] = useState([])
+
     // useEffect(() => {
     //     const fetchData = async () => {
     //         try {
     //             const response = await axios.get('http://localhost:8000/api/internet/');
-    //             console.log(response.data);
+    //             setOptions(response.data);
+    //             // console.log(response.data);
     //         } catch (error) {
     //             console.error('Error fetching data:', error);
     //         } finally {
-    //             console.log("final");;
+    //             // console.log("final");;
     //         }
     //     };
 
@@ -153,10 +156,10 @@ const Internet = () => {
                     <div className='grid-item' key={index}>
                         <Package
                             id={option.id}
-                            cimcard={option.cimcard}
+                            simcard={option.simcard_class}
                             title={option.title}
-                            type={option.type}
-                            capacity={option.capacity}
+                            type={option.simcard_type}
+                            capacity={option.size}
                             duration={option.duration}
                             price={option.price}
                         />
