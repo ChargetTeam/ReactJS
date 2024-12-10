@@ -1,5 +1,6 @@
 import React from 'react';
 import './modal.css';
+import { IoMdClose } from "react-icons/io";
 
 const Modal = ({ handleClose, show, children }) => {
     const modalClassName = show ? 'modal display-block' : 'modal display-none';
@@ -7,7 +8,7 @@ const Modal = ({ handleClose, show, children }) => {
         <div className={modalClassName}>
             <section className="modal-main">
                 <button className='modal-close-button' type="button" onClick={handleClose}>
-                    X
+                    <IoMdClose size={20} />
                 </button>
                 {children}
             </section>
