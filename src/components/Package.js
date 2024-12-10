@@ -30,7 +30,6 @@ const Package = ({ pkg }) => {
 
             <div className='package-detail'>
                 <div>
-
                     {toPersianDigits(pkg.traffic?.category?.value) ||
                         toPersianDigits(pkg.in_network_conversation?.category?.value)}{" "}
                     {subTypeMappingTraffic[pkg.traffic?.category?.sub_type] || ""}

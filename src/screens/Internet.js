@@ -62,13 +62,7 @@ const Internet = () => {
                 {options.map((option, index) => (
                     <div className="grid-item" key={index}>
                         <Package
-                            id={option.id}
-                            cimcard={option.cimcard}
-                            title={option.title}
-                            type={option.type}
-                            capacity={option.capacity}
-                            duration={option.duration}
-                            price={option.price}
+                            pkg={option}
                         />
                     </div>
                 ))}
