@@ -43,6 +43,7 @@ const Internet = () => {
 
     return (
         <div className="internet-page">
+            {/* Full-width banner */}
             <div
                 className="banner"
                 style={{
@@ -60,7 +61,15 @@ const Internet = () => {
             <div className="grid-container">
                 {options.map((option, index) => (
                     <div className="grid-item" key={index}>
-                        <Package pkg={option} />
+                        <Package
+                            id={option.id}
+                            cimcard={option.cimcard}
+                            title={option.title}
+                            type={option.type}
+                            capacity={option.capacity}
+                            duration={option.duration}
+                            price={option.price}
+                        />
                     </div>
                 ))}
             </div>
