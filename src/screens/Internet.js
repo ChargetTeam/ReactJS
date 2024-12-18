@@ -8,8 +8,7 @@ const Internet = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8003/api/operator/internet/mci');
-                console.log("response:", response.data.data);
+                const response = await axios.get('http://localhost:8003/api/operator/internet/mtn');
                 setOptions(response.data.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
